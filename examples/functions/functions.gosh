@@ -1,0 +1,14 @@
+func getFileContent(filename string) (string, error) {
+    return call("cat $filename")
+}
+
+func main() {
+    filename := arguments[1]
+    fileContent, err := getFileContent($filename)
+    if err != nil {
+        echo "failed: $err"
+        exit 1;
+    }
+
+    echo "$fileContent";
+}
